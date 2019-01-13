@@ -21,6 +21,11 @@ class Solution(object):
 
     def twoSum(self, nums, target):
         """
+        Add num:index to a dict
+        Check if target-num is in the dict
+            If yes, return index of target-num and index of num
+
+        Example:
         for 7, check if (5-7) in dict, not, put 7:0 into dict
         for 2, check (5-2) in dict, not, put 2:1 into dict
         11:2, 15:3, 
