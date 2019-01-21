@@ -27,6 +27,9 @@ class Solution(object):
          then for b, we append "d", "e", "f" again
          then for c...
         """
+        if digits == "":
+            return []
+
         # don't use set(), otherwise the order is not well controlled
         combinations = list()
         def recurse(all_digits, path_so_far):
