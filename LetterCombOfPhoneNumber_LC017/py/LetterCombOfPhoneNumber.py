@@ -31,10 +31,14 @@ class Solution(object):
             return []
 
         # don't use set(), otherwise the order is not well controlled
-        combinations = list()
-        def recurse(all_digits, path_so_far):
+
+        # recursion without using global variable
+        def recurse(all_digits, path_so_far, combinations=[]):
+            # if combinations is None:
+                # combinations = []
             if not all_digits: # if all_digits == "", then appending 
                 combinations.append(path_so_far)
+                # note: here we need a no-value return 
                 return
 
             # split to first digit and other digits
@@ -45,10 +49,11 @@ class Solution(object):
             # append the current letter to the output path_so_far
             for letter in letters:
                 print("append {} to path_so_far {}".format(letter, path_so_far))
-                recurse(rest, path_so_far + letter)
+                recurse(rest, path_so_far + letter, combinations)
 
-        recurse(digits, "")
-        return combinations
+            return combinations
+
+        return recurse(digits, "")
 
 if __name__ == '__main__':
     s = Solution()
