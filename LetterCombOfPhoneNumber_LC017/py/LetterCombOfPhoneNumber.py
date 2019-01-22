@@ -33,7 +33,7 @@ class Solution(object):
         # don't use set(), otherwise the order is not well controlled
         combinations = list()
         def recurse(all_digits, path_so_far):
-            if not all_digits: # if all_digits == "", then appending 
+            if not all_digits: # if all_digits == "", means all letters have been traversed, now can append it to final list 
                 combinations.append(path_so_far)
                 return
 
